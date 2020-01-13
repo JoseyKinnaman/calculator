@@ -16,3 +16,11 @@ var number1 = parseInt (prompt ("Enter the temp in Celsius "));
 var result = Temp(number1);
 
 alert(result);
+
+var ounce = function (number1){
+    return (number1 / 8)
+};
+var number1 = parseInt(prompt("Enter Ounces"));
+var result = ounce(number1);
+
+alert(result);
