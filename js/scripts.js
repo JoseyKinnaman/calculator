@@ -1,26 +1,49 @@
-var BMI = function (number1, number2){
-	return ((number1 / (number2 ** 2))*703);
+// business logic below:
+
+var add = function(number1, number2) {
+    return number1 + number2;
 };
-
-var number1 = parseInt(prompt("Enter your weight in lbs "));
-var number2 = parseInt(prompt("Enter your height in inches "));
-var result = BMI(number1,number2);
-
-alert(result);
-
-var Temp = function (number1){
-    return ((number1 * 9/5) + 32)
+    
+var subtract = function(number1, number2) {
+    return number1- number2;
 };
-
-var number1 = parseInt (prompt ("Enter the temp in Celsius "));
-var result = Temp(number1);
-
-alert(result);
-
-var ounce = function (number1){
-    return (number1 / 8)
+var multiply = function(number1, number2) {
+    return number1 * number2;
+  };
+  
+var divide = function(number1, number2) {
+    return number1 / number2;
 };
-var number1 = parseInt(prompt("Enter Ounces"));
-var result = ounce(number1);
+// font end logic below:
 
-alert(result);
+$(document).ready(function() {
+  $("form#add").submit(function(event) {
+    event.preventDefault();
+    var number1 =parseInt($("#add1").val());
+    var number2 = parseInt($("#add2").val());
+    var result = add(number1, number2);
+    $("#output").text(result);
+  });
+  $("form#subtract").submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#subtract1").val());
+    var number2 = parseInt($("#subtract2").val());
+    var result = subtract(number1, number2);
+    $("#output2").text(result);
+  });
+  $("form#multiply").submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#multiply1").val());
+    var number2 = parseInt($("#multiply2").val());
+    var result = multiply(number1, number2);
+    $("#output3").text(result);
+  });
+  $("form#divide").submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#divide1").val());
+    var number2 = parseInt($("#divide2").val());
+    var result = divide(number1, number2);
+    $("#output4").text(result);
+  });
+});
+  
